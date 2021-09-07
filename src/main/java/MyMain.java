@@ -2,21 +2,35 @@ public class MyMain {
     // Takes two Strings as input, and returns a String equal to the first half
     // of the shorter String plus the second half of the longer String.
     public static String halfAdder(String str1, String str2) {
-        // REPLACE THIS WITH YOUR CODE
-        return "";
+        if (str1.length()>=str2.length())
+        return str2.substring(0,str2.length()/2)+str1.substring(str1.length()/2,str1.length());
+        else return str1.substring(0,str1.length()/2)+str2.substring(str2.length()/2,str2.length());
     }
 
     // Takes a String as input, and returns true if the String contains an 'A' or 'a'
     // and returns false otherwise
     public static boolean checkIfA(String str) {
         // REPLACE THIS WITH YOUR CODE
-        return false;
+        return str.toLowerCase().contains("a");
     }
 
     //  Takes in two Strings as input and returns a String equal to those two Strings added
     //  together in alphabetic order.
     public static String stringOrder(String str1, String str2) {
-        return "";
+        int Str1start = 0;
+        int Str2start = 0;
+        char[] alphabet = {'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'};
+        for(int i = 0;i<alphabet.length;i++){
+            if (str1.charAt(0)==alphabet[i]){
+                Str1start = i;
+            }
+            if (str2.charAt(0)==alphabet[i]){
+                Str2start = i;
+            }
+        }
+        if (Str1start > Str2start)
+            return str1+str2;
+        else return str2+str1;
     }
 
 
